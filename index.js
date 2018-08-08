@@ -107,7 +107,6 @@ function tripCalc() {
   var journeyCost;
   var timeOfJourney;
   var newfuelEfficiency
-  var dist;
   var temp;
 
   distance = parseFloat(prompt("Enter the distance of your journey km"));
@@ -120,11 +119,12 @@ function tripCalc() {
     temp = distance / fuelEfficiency;
     journeyCost = temp * costPerGallon;
   } else {
+//Underneath here what is happening is that I am calculating how fast/number of miles the user is going, with an indication as to how much they should slow down by.
   overSixtyMPH = speed - 60;
   overSixtyMPH *= 2;
   newfuelEfficiency = fuelEfficiency - overSixtyMPH;
   if (newfuelEfficiency < fuelEfficiency) {
-      alert("I think you should slow down, reduce your speed by " + (overSixtyMPH / 2));
+      alert("Reduce your speed by " + (overSixtyMPH / 2) + " to improve your cars MPG when driving");
       return;
   }
     temp = distance / newfuelEfficiency;
