@@ -1,4 +1,5 @@
 // Main function that runs the calculator
+
 var calcType = prompt("Enter the type of calculator you want to use, enter either 'basic', 'adv' (for powers and square root), 'bmi' and 'trip'")
 switch (calcType) {
     // Will run the basic calculator
