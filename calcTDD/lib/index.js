@@ -1,5 +1,4 @@
 // Main function that runs the calculator
-
 var calcType = prompt("Enter the type of calculator you want to use, enter either 'basic', 'adv' (for powers and square root), 'bmi' and 'trip'")
 switch (calcType) {
     // Will run the basic calculator
@@ -116,7 +115,7 @@ function tripCalc() {
   var newfuelEfficiency
   var temp;
 
-  distance = parseFloat(prompt("Enter the distance of your journey km"));
+  distance = parseFloat(prompt("Enter the distance of your journey miles"));
   fuelEfficiency = parseFloat(prompt("Enter the miles per gallon of your vehicle"));
   costPerGallon = parseFloat(prompt("Enter the cost per gallon of your vehicle fuel"));
   speed = parseFloat(prompt("Enter the speed of your vehicle"));
