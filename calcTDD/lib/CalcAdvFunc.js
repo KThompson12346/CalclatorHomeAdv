@@ -47,23 +47,43 @@ function metricBMI(height, weight) {
   return parseFloat(metricBmiResult);
 }
 
-function speedUnderSixty(distance, fuelEfficiency, costPerGallon, speed) {
+function tripLengthUnderSixty(distance, fuelEfficiency, costPerGallon, speed) {
   var temp = distance / fuelEfficiency;
-  journeyCost = temp * costPerGallon;
-  return journeyCost;
+  var journeyCost = temp * costPerGallon;
+  var result = journeyCost.toFixed(2);
+  return parseFloat(result);
 }
-//
-// function journeyTime(distance, speed) {
-//  return distance / speed;
+
+function journeyTime(distance, speed) {
+  var timeOfJourney = distance / speed;
+  var result = timeOfJourney.toFixed(2);
+  return parseFloat(result);
+}
+
+function costOfJourney(costPerGallon, distance, speed, fuelEfficiency) {
+  overSixtyMPH = speed - 60;
+  overSixtyMPH *= 2;
+  var newfuelEfficiency = fuelEfficiency - overSixtyMPH;
+  var temp = distance / newfuelEfficiency;
+  var costJourney = temp * costPerGallon;
+  var result = costJourney.toFixed(2);
+  return parseFloat(result);
+}
+
+// function tripLengthOverSixty(speed, fuelEfficiency) {
+//   var result;
+//   var greaterSixty = speed - 60;
+//   greaterSixty += 2;
+//   var nfuelEfficiency = fuelEfficiency - greaterSixty;
+//   result = nfuelEfficiency;
+//   return result;
 // }
-// timeOfJourney = distance / speed;
-// //Underneath here what is happening is that I am calculating how fast/number of miles the user is going, with an indication as to how much they should slow down by.
+//Underneath here what is happening is that I am calculating how fast/number of miles the user is going, with an indication as to how much they should slow down by.
 //   overSixtyMPH = speed - 60;
 //   overSixtyMPH *= 2;
 //   newfuelEfficiency = fuelEfficiency - overSixtyMPH;
 //   if (newfuelEfficiency < fuelEfficiency) {
-//       alert("Reduce your speed by " + (overSixtyMPH / 2) + " to improve your cars MPG when driving");
-//       return;
+//       return newFuelEfficiency;
 //   }
 //     temp = distance / newfuelEfficiency;
 //     journeyCost = temp * costPerGallon;
@@ -72,4 +92,4 @@ function speedUnderSixty(distance, fuelEfficiency, costPerGallon, speed) {
 //  alert("The time it will take you is: " + timeOfJourney + " hours" + " and it will cost you £" + journeyCost);
 // }
 
-module.exports = {addtionFunc:addtionFunc, subtractionFunc:subtractionFunc, multiplyFunc:multiplyFunc, divisionFunc:divisionFunc, powerFunc:powerFunc, sqrtFunc:sqrtFunc, imperialBMI:imperialBMI, metricBMI:metricBMI, speedUnderSixty:speedUnderSixty,} //journeyTime:journeyTime, }
+module.exports = {addtionFunc:addtionFunc, subtractionFunc:subtractionFunc, multiplyFunc:multiplyFunc, divisionFunc:divisionFunc, powerFunc:powerFunc, sqrtFunc:sqrtFunc, imperialBMI:imperialBMI, metricBMI:metricBMI, tripLengthUnderSixty:tripLengthUnderSixty,  journeyTime:journeyTime, costOfJourney:costOfJourney}

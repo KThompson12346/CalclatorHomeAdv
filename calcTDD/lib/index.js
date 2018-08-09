@@ -115,7 +115,7 @@ function tripCalc() {
   var newfuelEfficiency
   var temp;
 
-  distance = parseFloat(prompt("Enter the distance of your journey miles"));
+  distance = parseFloat(prompt("Enter the distance of your journey in miles"));
   fuelEfficiency = parseFloat(prompt("Enter the miles per gallon of your vehicle"));
   costPerGallon = parseFloat(prompt("Enter the cost per gallon of your vehicle fuel"));
   speed = parseFloat(prompt("Enter the speed of your vehicle"));
